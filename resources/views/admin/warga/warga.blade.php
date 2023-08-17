@@ -36,18 +36,12 @@
     <div>
         <div class="relative ml-7 mb-5">
             <div class="relative inline-block text-left">
-                <button id="toggleDropdown" type="button" class="inline-flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                <a href="{{ route('warga.create') }}" class="inline-flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
                     <span>Tambah Data</span>
-                </button>
-                <div id="dropdownContent" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl z-10 hidden">
-                    <!-- Isi dropdown di sini -->
-                    <a href="{{ route('warga.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tambah Data</a>
-                    <a href="{{ route('warga.create') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tambah Data</a>
-                    <!-- Tambahkan item dropdown lain jika diperlukan -->
-                </div>
+                </a>
             </div>
             
             <a class="inline-flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"

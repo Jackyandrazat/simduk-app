@@ -226,7 +226,7 @@
                         <input
                             class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('usia') border-red-500 @enderror"
                             value="{{ old('usia') }}" placeholder="Jane Doe" id="usia" name="usia"
-                            value="" />
+                            type="number" />
                     </label>
                     @error('usia')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -343,6 +343,16 @@
                             nikError.textContent = "";
                         }
                     });
+            });
+
+            const tanggalLahirInput = document.getElementById('tanggal_lahir');
+            const usiaInput = document.getElementById('usia');
+
+            tanggalLahirInput.addEventListener('input', function() {
+                const tahunLahir = new Date(this.value).getFullYear();
+                const tahunSekarang = new Date().getFullYear();
+                const usia = tahunSekarang - tahunLahir;
+                usiaInput.value = usia;
             });
         });
     </script>
