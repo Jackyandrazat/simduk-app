@@ -59,9 +59,6 @@
                         <input type="file" id="file" name="file"
                             class="mt-1 p-2 border rounded-lg w-full border-gray-600">
                     </div>
-                    @if ($errors->has('error'))
-                            <p id="nik-error" class="mt-2 text-sm text-red-600"> {{ $errors->first('error') }}</p>
-                    @endif
 
                     <div class="mt-4">
                         <button type="submit"
