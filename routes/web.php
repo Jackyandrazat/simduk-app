@@ -44,6 +44,7 @@ Route::prefix('warga')->middleware(['auth','admin'])->group(function () {
     Route::get('view/pdf', [WargaController::class, 'generatePDF'])->name('warga.generatePDF');
     Route::get('download/pdf', [WargaController::class, 'downloadPDF'])->name('warga.downloadPDF');
     Route::get('/check-nik', [WargaController::class, 'checkNik'])->name('checkNik');
+    Route::post('/import', [WargaController::class, 'import'])->name('warga.import');
 
 
 });

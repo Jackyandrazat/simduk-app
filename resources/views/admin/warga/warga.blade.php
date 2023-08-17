@@ -89,6 +89,13 @@
             <p class="text-sm">{{ session('pesan') }}</p>
         </div>
     @endif
+    @if (session()->has('error'))
+        <div class="bg-blue-100 border-t border-b border-red-600 text-red-600 px-2 py-3 max-w-5xl mb-5 ml-5"
+            role="alert">
+            <p class="font-bold">Error Message</p>
+            <p class="text-sm">{{ session('error') }}</p>
+        </div>
+    @endif
     <div class="max-w-5xl mx-auto sm:px-6 lg:px-2">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900">

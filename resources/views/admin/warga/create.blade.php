@@ -51,13 +51,18 @@
                 <h4 class="mb-4 text-lg text-center font-semibold text-gray-600 dark:text-gray-300">
                     Tambah Data Warga
                 </h4>
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('warga.import') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4 mt-3">
                         <label for="file" class="block text-sm font-medium text-gray-700">Upload File with
                             Excel</label>
-                        <input type="file" id="file" name="file" class="mt-1 p-2 border rounded-lg w-full border-gray-600">
+                        <input type="file" id="file" name="file"
+                            class="mt-1 p-2 border rounded-lg w-full border-gray-600">
                     </div>
+                    @if ($errors->has('error'))
+                            <p id="nik-error" class="mt-2 text-sm text-red-600"> {{ $errors->first('error') }}</p>
+                    @endif
+
                     <div class="mt-4">
                         <button type="submit"
                             class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700">Upload</button>

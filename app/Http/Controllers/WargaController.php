@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Warga;
-use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
+use App\Imports\WargasImport;
 use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 
 class WargaController extends Controller
@@ -52,6 +54,18 @@ class WargaController extends Controller
     public function create()
     {
         return view('admin.warga.create');
+    }
+
+    public function import(Request $request)
+    {
+        // dd($request->file('file'));
+
+        if ($request->hasFile('file')) {
+            Excel::import(new WargasImport, $request->file('file'));
+            return redirect('/warga')->with('success', 'Yeay, Data Berhasil diupload');
+        } else {
+            return redirect('/warga')->with('error', 'Maaf, File Belum diUpload');
+        }
     }
 
     public function store(Request $request)
