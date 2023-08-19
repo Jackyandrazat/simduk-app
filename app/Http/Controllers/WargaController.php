@@ -43,8 +43,8 @@ class WargaController extends Controller
 
     public function generateWordDoc(Warga $warga)
     {
-        $templatePath = public_path('SURAT-KETERANGAN-TEMPLATE.docx'); // Sesuaikan dengan path template Anda
-        $outputPath = storage_path('app/public/' . $warga->nama . '_surat_domisili.docx'); // Sesuaikan dengan path tujuan dokumen keluaran
+        $templatePath = public_path('SURAT-KETERANGAN-TEMPLATE.docx'); 
+        $outputPath = storage_path('app/public/' . $warga->nama . '_surat_domisili.docx');
     
         // Load template
         $template = new TemplateProcessor($templatePath);
