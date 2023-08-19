@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Warga;
 use Illuminate\Http\Request;
 use App\Imports\WargasImport;
+use PhpOffice\PhpWord\PhpWord;
+
 use Illuminate\Routing\Controller;
 use Maatwebsite\Excel\Facades\Excel;
+use PhpOffice\PhpWord\TemplateProcessor;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 
@@ -35,6 +38,29 @@ class WargaController extends Controller
 
         return $pdf->stream('rekap-data-warga.pdf');
     }
+
+    
+
+    public function generateWordDoc(Warga $warga)
+    {
+        $templatePath = public_path('SURAT-KETERANGAN-TEMPLATE.docx'); // Sesuaikan dengan path template Anda
+        $outputPath = storage_path('app/public/' . $warga->nama . '_surat_domisili.docx'); // Sesuaikan dengan path tujuan dokumen keluaran
+    
+        // Load template
+        $template = new TemplateProcessor($templatePath);
+    
+        // Replace placeholder dengan data dari model Warga
+        $template->setValue('NamaWarga', $warga->nama);
+        // Isi placeholder lainnya sesuai kebutuhan
+    
+        // Simpan dokumen yang sudah diisi data
+        $template->saveAs($outputPath);
+    
+        // Download atau tampilkan dokumen
+        return response()->download($outputPath)->deleteFileAfterSend();
+    }
+
+
 
     public function downloadPDF()
     {
@@ -87,7 +113,7 @@ class WargaController extends Controller
             'status_kependudukan' => 'required',
             'RW' => 'required',
             'RT' => 'required',
-        ],[
+        ], [
             'nik.required' => 'Kolom harus diisi.',
             'nama.required' => 'Kolom harus diisi.',
             'tempat_lahir.required' => 'Kolom harus diisi.',

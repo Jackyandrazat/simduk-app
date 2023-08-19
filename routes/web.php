@@ -42,6 +42,7 @@ Route::prefix('warga')->middleware(['auth','admin'])->group(function () {
     Route::delete('/warga/{warga}', [WargaController::class, 'destroy'])->name('warga.destroy');
     Route::get('/{warga}/show', [WargaController::class, 'show'])->name('warga.show');
     Route::get('view/pdf', [WargaController::class, 'generatePDF'])->name('warga.generatePDF');
+    Route::get('/generate-word-doc/{warga}', [WargaController::class, 'generateWordDoc'])->name('warga.generateWordDoc');
     Route::get('download/pdf', [WargaController::class, 'downloadPDF'])->name('warga.downloadPDF');
     Route::get('/check-nik', [WargaController::class, 'checkNik'])->name('checkNik');
     Route::post('/import', [WargaController::class, 'import'])->name('warga.import');
