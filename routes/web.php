@@ -58,6 +58,10 @@ Route::prefix('keluarga')->middleware(['auth','admin'])->group(function () {
     Route::get('/{keluarga}/edit', [KeluargaController::class, 'edit'])->name('keluarga.edit');
     Route::put('/{keluarga}/edit', [KeluargaController::class, 'update']);
     Route::delete('/{keluarga}', [KeluargaController::class, 'destroy'])->name('keluarga.destroy');
+    Route::get('/check-no-kk', [KeluargaController::class, 'checkNoKK'])->name('checkNoKK');
+    Route::get('/check-nik', [KeluargaController::class, 'checkNik'])->name('checkNik');
+    Route::get('/{keluarga}/show', [KeluargaController::class, 'show'])->name('keluarga.show');
+
 });
 
 Route::prefix('kendaraan')->middleware(['auth','admin'])->group(function () {
