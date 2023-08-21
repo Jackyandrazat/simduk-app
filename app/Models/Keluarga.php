@@ -11,12 +11,13 @@ class Keluarga extends Model
     protected $guarded=[];
 
     protected $fillable =[
-        'id','no_kk','nama_keluarga','nik'
+        'id','no_kk','nama_keluarga'
     ];
     public $timestamps = true;
 
-    public function wargaRelation()
+    public function warga()
     {
-    	return $this->belongsTo(Warga::class,'nik','id');
+    	return $this->hasMany(Warga::class);
     }
+    
 }

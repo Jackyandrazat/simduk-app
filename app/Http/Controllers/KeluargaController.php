@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Warga;
 use App\Models\Keluarga;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Warga;
 
 class KeluargaController extends Controller
 {
@@ -28,24 +29,18 @@ class KeluargaController extends Controller
 
     public function create()
     {
-        $suamiWargas = Warga::where('status_kk', 'suami')->get(['id','nik','nama']);
     
-        return view('admin.keluarga.create', [
-            'wargas' => $suamiWargas,
-        ]);
+        return view('admin.keluarga.create');
     }
 
     public function store(Request $request)
     {
         $validatedData=$request->validate([
-            'no_kk' => 'required|unique:keluargas|max:16',
+            'no_kk' => 'required|max:16',
             'nama_keluarga' => 'required',
-            'nik' => 'required|exists:wargas,id',
         ],[
             'no_kk.required' => 'Kolom harus diisi.',
-            'nama_keluarga.required' => 'Kolom harus diisi.',
-            'nik.required' => 'Kolom harus diisi.',
-            'nik.exists' => 'Data Sudah Ada!'            
+            'nama_keluarga.required' => 'Kolom harus diisi.',          
         ]);
 
         // dd($validatedData);
@@ -55,11 +50,15 @@ class KeluargaController extends Controller
 
     public function show(Keluarga $keluarga)
     {
+        $wargas = DB::table('wargas')
+            ->join('keluargas', 'wargas.keluarga_id', '=', 'keluargas.id')
+            ->select('wargas.*')
+            ->where('keluargas.id', $keluarga->id)
+            ->get();
+    
         return view('admin.keluarga.show', [
             'keluarga' => $keluarga,
-            'keluargas' => Keluarga::all(),
-            'wargas' => Warga::all()
-
+            'wargas' => $wargas,
         ]);
     }
 
@@ -76,7 +75,6 @@ class KeluargaController extends Controller
         $validatedData=$request->validate([
             'no_kk' => 'required||max:16',
             'nama_keluarga' => 'required',
-            'nik' => 'required',
         ]);
         // dd($validatedData);
         Keluarga::where('id', $keluarga->id)->update($validatedData);

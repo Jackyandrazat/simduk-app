@@ -100,7 +100,7 @@ class WargaController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nik' => 'required|unique:wargas|max:16',
+            'nik' => 'required|max:16',
             'keluarga_id' => 'required',
             'nama' => 'required',
             'tempat_lahir' => 'required',

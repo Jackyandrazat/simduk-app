@@ -73,22 +73,6 @@
                     @error('nama_keluarga')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
-                    <label class="block text-sm mt-3">
-                        <span class="text-gray-700 dark:text-gray-400">NIK</span>
-                        <select
-                            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
-                            name="nik" id="nik">
-                            <option value="">Pilih NIK</option>
-                            @foreach ($wargas as $warga)
-                                <option value="{{ $warga->id }}">{{ $warga->nik }} --> {{ $warga->nama }}
-                                </option>
-                            @endforeach
-                            {{-- <option value="Islam" {{ $warga->agama === 'Islam' ? 'selected' : '' }}>Islam</option> --}}
-                        </select>
-                        @error('nik')
-                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                    @enderror
-                    </label>
 
 
                     <div class="flex flex-col flex-wrap mb-8 space-y-4 md:flex-row md:items-end md:space-x-4">

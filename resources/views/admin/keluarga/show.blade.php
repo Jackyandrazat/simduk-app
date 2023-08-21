@@ -65,56 +65,53 @@
                 <h1 class="text-xl text-center font-semibold mb-2">Kartu Keluarga</h1>
                 <h1 class="text-sm text-center font-semibold mb-2">No : {{ $keluarga->no_kk }}</h1>
                 <hr class="mb-4">
-                <div class="flex justify-between">
+                {{-- <div class="flex justify-between">
                     <div>
                         <p class="font-semibold">Nama Ayah</p>
-                        <p class="text-gray-600">John Doe</p>
+                        
+                        <p class="text-gray-600"></p>
+                        
                     </div>
                     <div>
                         <p class="font-semibold">Nama Ibu</p>
-                        <p class="text-gray-600">Jane Doe</p>
+                        <p class="text-gray-600"></p>
                     </div>
-                </div>
+                </div> --}}
                 <div class="mt-4">
-                    <p class="text-sm text-gray-500">Anggota Keluarga</p>
-                    <table class="w-full mt-2">
+                    <table class="w-full mt-2 text-center">
                         <thead class="bg-gray-200">
                             <tr>
                                 <th class="p-2">Nama</th>
                                 <th class="p-2">NIK</th>
                                 <th class="p-2">Jenis Kelamin</th>
                                 <th class="p-2">Tanggal Lahir</th>
+                                <th class="p-2">Status</th>
+                                <th class="p-2">Status Kartu Keluarga</th>
+                                <th class="p-2">Pekerjaan</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($wargas as $warga)
                             <tr>
-                                <td class="p-2 font-semibold">Child 1</td>
-                                <td class="p-2 text-gray-600">123456789</td>
-                                <td class="p-2 text-gray-600">Laki-laki</td>
-                                <td class="p-2 text-gray-600">01/01/2005</td>
+                                <td class="p-2 font-semibold">{{$warga->nama}}</td>
+                                <td class="p-2 text-gray-600">{{$warga->nik}}</td>
+                                <td class="p-2 text-gray-600">{{$warga->jenis_kelamin}}</td>
+                                <td class="p-2 text-gray-600">{{$warga->tanggal_lahir}}</td>
+                                <td class="p-2 text-gray-600">{{$warga->status}}</td>
+                                <td class="p-2 text-gray-600">{{$warga->status_kk}}</td>
+                                <td class="p-2 text-gray-600">{{$warga->pekerjaan}}</td>
                             </tr>
-                            <tr>
-                                <td class="p-2 font-semibold">Child 2</td>
-                                <td class="p-2 text-gray-600">987654321</td>
-                                <td class="p-2 text-gray-600">Perempuan</td>
-                                <td class="p-2 text-gray-600">15/05/2008</td>
-                            </tr>
-                            <tr>
-                                <td class="p-2 font-semibold">Child 3</td>
-                                <td class="p-2 text-gray-600">567890123</td>
-                                <td class="p-2 text-gray-600">Laki-laki</td>
-                                <td class="p-2 text-gray-600">10/10/2012</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
                 <div class="text-right mt-4 mr-4">
+                    <p class="font-semibold mt-2">NAMA KELUARGA</p>
                     <p class="font-semibold mt-2">{{ $keluarga->nama_keluarga }}</p>
-                    <p class="text-gray-600">{{ $keluarga->wargaRelation->nama }}</p>
+                    {{-- <p class="text-gray-600">{{ $keluarga->warga->nama }}</p> --}}
                 </div>
             </div>
         </div>
-               
     </div>
     <script>
         // Ambil elemen tombol dan elemen dropdown
