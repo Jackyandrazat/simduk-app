@@ -18,9 +18,6 @@ return new class extends Migration
             $table->char('no_kk',16)->unique();
             $table->string('nama_keluarga');
             $table->timestamps();
-
-            $table->unsignedBigInteger('nik');
-            $table->foreign('nik')->references('id')->on('wargas');
         });
     }
 

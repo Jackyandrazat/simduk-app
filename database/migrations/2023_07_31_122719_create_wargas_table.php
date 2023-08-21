@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('agama');
             $table->string('pekerjaan');
             $table->string('alamat');
+            $table->string('alamat_baru');
             $table->string('status');
             $table->string('status_kk');
             $table->integer('usia');
