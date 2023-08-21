@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('wargas', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_kk');
-            $table->foreign('id_kk')->references('id')->on('keluargas');
-        });
+        // Schema::table('wargas', function (Blueprint $table) {
+        //     $table->unsignedBigInteger('id_kk');
+        //     $table->foreign('id_kk')->references('id')->on('keluargas');
+        // });
     }
 
     /**

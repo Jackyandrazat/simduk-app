@@ -116,6 +116,7 @@
                                     <th class="px-2 py-2">NIK</th>
                                     <th class="px-2 py-2">Nama Warga</th>
                                     <th class="px-2 py-2">Alamat</th>
+                                    <th class="px-2 py-2">Alamat Sekarang</th>
                                     <th class="px-2 py-2">RT</th>
                                     <th class="px-2 py-2">RW</th>
                                     <th class="px-2 py-2">Actions</th>
@@ -136,6 +137,9 @@
                                         </td>
                                         <td class="px-2 py-2 text-sm">
                                             {{ $warga['alamat'] }}
+                                        </td>
+                                        <td class="px-2 py-2 text-sm">
+                                            {{ $warga['alamat_baru'] }}
                                         </td>
                                         <td class="px-2 py-2 text-sm">
                                             {{ $warga['RW'] }}

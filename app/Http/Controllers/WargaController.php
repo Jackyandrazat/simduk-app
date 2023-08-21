@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Warga;
 use Illuminate\Http\Request;
 use App\Imports\WargasImport;
+use App\Models\Keluarga;
 use PhpOffice\PhpWord\PhpWord;
 
 use Illuminate\Routing\Controller;
@@ -79,7 +80,9 @@ class WargaController extends Controller
 
     public function create()
     {
-        return view('admin.warga.create');
+        return view('admin.warga.create',[
+            'keluargas'=> Keluarga::all()
+        ]);
     }
 
     public function import(Request $request)
@@ -98,6 +101,7 @@ class WargaController extends Controller
     {
         $validatedData = $request->validate([
             'nik' => 'required|unique:wargas|max:16',
+            'keluarga_id' => 'required',
             'nama' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
@@ -106,6 +110,7 @@ class WargaController extends Controller
             'agama' => 'required',
             'pekerjaan' => 'required',
             'alamat' => 'required',
+            'alamat_baru' => 'required',
             'status' => 'required',
             'status_kk' => 'required',
             'usia' => 'required',
@@ -123,6 +128,7 @@ class WargaController extends Controller
             'agama.required' => 'Kolom harus diisi.',
             'pekerjaan.required' => 'Kolom harus diisi.',
             'alamat.required' => 'Kolom harus diisi.',
+            'alamat_baru.required' => 'Kolom harus diisi.',
             'status.required' => 'Kolom harus diisi.',
             'status_kk.required' => 'Kolom harus diisi.',
             'usia.required' => 'Kolom harus diisi.',
@@ -130,6 +136,7 @@ class WargaController extends Controller
             'status_kependudukan.required' => 'Kolom harus diisi.',
             'RW.required' => 'Kolom harus diisi.',
             'RT.required' => 'Kolom harus diisi.',
+            'id_kk.required' => 'Kolom harus diisi.',
 
         ]);
 
@@ -149,7 +156,11 @@ class WargaController extends Controller
 
     public function edit(Warga $warga)
     {
-        return view('admin.warga.edit', ['warga' => $warga]);
+        return view('admin.warga.edit', [
+            'warga' => $warga,
+            'keluargas' => Keluarga::all()
+
+        ]);
     }
 
     public function show(Warga $warga)
@@ -165,6 +176,7 @@ class WargaController extends Controller
     {
         $validatedData = $request->validate([
             'nik' => 'required',
+            'keluarga_id' => 'required',
             'nama' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
@@ -173,6 +185,7 @@ class WargaController extends Controller
             'agama' => 'required',
             'pekerjaan' => 'required',
             'alamat' => 'required',
+            'alamat_baru' => 'required',
             'status' => 'required',
             'status_kk' => 'required',
             'usia' => 'required',

@@ -80,6 +80,25 @@
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                     @enderror
                     <label class="block text-sm mt-3">
+                        <span class="text-gray-700 dark:text-gray-400">Nomor Kartu Keluarga</span>
+                        <select
+                            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                            name="keluarga_id" id="keluarga_id">
+                            <option value="">Pilih KK</option>
+                            @foreach ($keluargas as $keluarga)
+                                <option value="{{ $keluarga->id }}">{{ $keluarga->no_kk }} --> {{ $keluarga->nama_keluarga }}
+                                </option>
+                            @endforeach
+                            {{-- <option value="Islam" {{ $keluarga->agama === 'Islam' ? 'selected' : '' }}>Islam</option> --}}
+                        </select>
+                        @error('id_kk')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                    </label>
+                    @error('nik')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                    <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Nama</span>
                         <input
                             class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('nama') border-red-500 @enderror"
@@ -184,6 +203,16 @@
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray @error('alamat') border-red-500 @enderror"
                             value="{{ old('alamat') }}" rows="3" placeholder="Enter some long form content." id="alamat"
                             name="alamat"></textarea>
+                    </label>
+                    @error('alamat')
+                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                    <label class="block mt-4 text-sm">
+                        <span class="text-gray-700 dark:text-gray-400">Alamat Sekarang</span>
+                        <textarea
+                            class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray @error('alamat') border-red-500 @enderror"
+                            value="{{ old('alamat_baru') }}" rows="3" placeholder="Enter some long form content." id="alamat"
+                            name="alamat_baru"></textarea>
                     </label>
                     @error('alamat')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
