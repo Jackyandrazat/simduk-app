@@ -35,7 +35,7 @@
     <div>
         <div class="relative py-5 my-5">
             <a
-              class="flex absolute top-0 right-8 items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+              class="flex absolute top-0 right-8 items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"
                 href="{{ route('kendaraan.create') }}"
               >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-2 w-6 h-6">
@@ -90,7 +90,7 @@
                                 <td class="px-2 py-2">
                                     <div class="flex items-center space-x-4 text-sm">
                                         <a
-                                          class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                          class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-green-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                           aria-label="Edit" href="{{ route('kendaraan.edit', ['kendaraan' => $kendaraan->id]) }}" 
                                         >
                                           <svg
@@ -108,7 +108,7 @@
                                             @method('DELETE')
                                             @csrf
                                             <button
-                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
+                                                class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-green-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                                 aria-label="Delete" type="submit" onclick="return confirm('Yakin akan menghapus data ?')"
                                                 >
                                                 <svg

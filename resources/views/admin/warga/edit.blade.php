@@ -61,14 +61,14 @@
                     <label class="block text-sm mt-5">
                         <span class="text-gray-700 dark:text-gray-400">NIK</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe"  name="nik" value="{{ $warga->nik }}" required
                         />
                     </label>
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Nomor Kartu Keluarga</span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                         name="keluarga_id" id="keluarga_id"
                         >
                         @foreach ($keluargas as $keluarga)
@@ -80,21 +80,21 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Nama</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe" name="nama" value="{{ $warga->nama }}" required
                         />
                     </label>
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Tempat Lahir</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe" name="tempat_lahir" value="{{ $warga->tempat_lahir }}" required
                         />
                     </label>
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Tanggal Lahir</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe" name="tanggal_lahir"  type="date" value="{{ $warga->tanggal_lahir }}" required
                         />
                     </label>
@@ -108,7 +108,7 @@
                         >
                             <input
                             type="radio"
-                            class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                            class="text-green-600 form-radio focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="jenis_kelamin" value="Laki-laki" {{ $warga->jenis_kelamin === 'Laki-laki' || 'Laki-Laki' || 'laki-laki' ? 'checked' : '' }}
                             />
                             <span class="ml-2">Laki Laki</span>
@@ -118,7 +118,7 @@
                         >
                             <input
                             type="radio"
-                            class="text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                            class="text-green-600 form-radio focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="jenis_kelamin" value="Perempuan" {{ $warga->jenis_kelamin === 'Perempuan' ? 'checked' : '' }}
                             />
                             <span class="ml-2">Perempuan</span>
@@ -130,7 +130,7 @@
                         Pendidikan
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                         name="pendidikan"
                         >
                             <option value="S3" {{ $warga->pendidikan === 'S3' ? 'selected' : '' }}>S3</option>
@@ -149,7 +149,7 @@
                         Agama
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                         name="agama"
                         >
                         <option value="Islam" {{ $warga->agama === 'Islam' ? 'selected' : '' }}>Islam</option>
@@ -162,14 +162,14 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Pekerjaan</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe" name="pekerjaan" value="{{ $warga->pekerjaan }}" required
                         />
                     </label>
                     <label class="block mt-4 text-sm">
                         <span class="text-gray-700 dark:text-gray-400">Alamat</span>
                         <textarea
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                         rows="3"
                         placeholder="Enter some long form content." name="alamat"
                         >{{ $warga->alamat }}</textarea>
@@ -177,7 +177,7 @@
                     <label class="block mt-4 text-sm">
                         <span class="text-gray-700 dark:text-gray-400">Alamat Sekarang</span>
                         <textarea
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                         rows="3"
                         placeholder="Enter some long form content." name="alamat_baru"
                         >{{ $warga->alamat_baru }}</textarea>
@@ -187,7 +187,7 @@
                         Status
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status"
                         >
                         <option value="Lajang" {{ $warga->status === 'Lajang' ? 'selected' : '' }}>Lajang</option>
@@ -202,7 +202,7 @@
                         Status Kartu Keluarga
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_kk"
                         >
                         <option value="Suami" {{ $warga->status_kk === 'Suami' ? 'selected' : '' }}>Suami</option>
@@ -214,7 +214,7 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Usia</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe" name="usia" value="{{ $warga->usia }}" required
                         />
                     </label>
@@ -223,7 +223,7 @@
                         Status Tempat Tinggal
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_tempat_tngl"
                         >
                         <option value="Tetap" {{ $warga->status_tempat_tngl === 'Tetap' ? 'selected' : '' }}>Tetap</option>
@@ -236,7 +236,7 @@
                         Status Penduduk
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_kependudukan"
                         >
                         <option value="Baru" {{ $warga->status_kependudukan === 'Baru' ? 'selected' : '' }}>Baru</option>
@@ -248,7 +248,7 @@
                         RW
                         </span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="RW"
                         >
                         <option value="1" {{ $warga->RW === '1' ? 'selected' : '' }}>1</option>
@@ -262,13 +262,13 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">RT</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         name="RT" value="{{ $warga->RT }}" required 
                         />
                     </label>
                     <div class="py-5">
                         <button
-                          class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                          class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"
                             type="submit"
                           >
                           <span>Perbarui Data</span>

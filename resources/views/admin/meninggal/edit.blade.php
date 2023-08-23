@@ -61,7 +61,7 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">NIK</span>
                         <select
-                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                        class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                         name="nik" id="nik"
                         >
                         @foreach ($wargas as $warga)
@@ -73,34 +73,34 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Tanggal Meninggal</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="00.00" name="date_meninggal" value="{{ $meninggal->date_meninggal }}" required
                         />
                     </label>
                     <label class="block text-sm mt-5">
                         <span class="text-gray-700 dark:text-gray-400">Jam Meninggal</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe"  name="jam" value="{{ $meninggal->jam }}" required
                         />
                     </label>
                     <label class="block text-sm mt-5">
                         <span class="text-gray-700 dark:text-gray-400">Lokasi Meninggal</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe"  name="lokasi_meninggal" value="{{ $meninggal->lokasi_meninggal }}" required
                         />
                     </label>
                     <label class="block text-sm mt-5">
                         <span class="text-gray-700 dark:text-gray-400">Lokasi Meninggal</span>
                         <input
-                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Jane Doe"  name="lokasi_pemakaman" value="{{ $meninggal->lokasi_pemakaman }}" required
                         />
                     </label>
                     <div class="py-5">
                         <button
-                          class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                          class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"
                             type="submit"
                           >
                           <span>Perbarui Data</span>

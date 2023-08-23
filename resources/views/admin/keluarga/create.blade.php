@@ -56,7 +56,7 @@
                     <label class="block text-sm mt-5">
                         <span class="text-gray-700 dark:text-gray-400">NO KK</span>
                         <input
-                            class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('no_kk') border-red-500 @enderror"
+                            class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('no_kk') border-red-500 @enderror"
                             value="{{ old('no_kk') }}" placeholder="No KK" id="no_kk" name="no_kk" />
                         <p id="no_kk-error" class="mt-2 text-sm text-red-600"></p>
                     </label>
@@ -66,7 +66,7 @@
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">Nama</span>
                         <input
-                            class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('nama_keluarga') border-red-500 @enderror"
+                            class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('nama_keluarga') border-red-500 @enderror"
                             value="{{ old('nama_keluarga') }}" placeholder="Jane Doe" id="nama_keluarga"
                             name="nama_keluarga" />
                     </label>
@@ -79,7 +79,7 @@
                         <!-- Divs are used just to display the examples. Use only the button. -->
                         <div>
                             <button
-                                class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                                class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"
                                 type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="mr-2 w-6 h-6">
@@ -94,7 +94,7 @@
                         <!-- Divs are used just to display the examples. Use only the button. -->
                         <div>
                             <button
-                                class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                                class="flex items-center justify-between px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-green"
                                 type="reset">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="mr-2 w-6 h-6">
