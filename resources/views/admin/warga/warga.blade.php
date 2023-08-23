@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Warga Page') }}
+            {{ __('Halaman Warga') }}
         </h2>
         <nav aria-label="Breadcrumb" class="mt-2">
             <ol class="flex items-center gap-1 text-sm text-gray-600">
@@ -90,7 +90,7 @@
             <p class="text-sm">{{ session('error') }}</p>
         </div>
     @endif
-    <div class="max-w-5xl mx-auto sm:px-6 lg:px-2">
+    <div class="max-w-5xl sm:px-6 lg:px-2">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-gray-900">
                 <!-- With actions -->
