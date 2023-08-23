@@ -23,7 +23,6 @@
       </button>
       <!-- Search input -->
       <div class="flex justify-end flex-1 lg:mr-32">
-        
       </div>
       <ul class="flex items-center flex-shrink-0 space-x-6">
         <!-- Profile menu -->
