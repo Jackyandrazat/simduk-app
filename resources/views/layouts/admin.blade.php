@@ -91,18 +91,17 @@
                         </x-nav-link>
                     </li>
                     <li class="relative px-6 py-3">
-                        <x-nav-link :href="route('kendaraan')" :active="request()->routeIs('kendaraan')"
+                        <x-nav-link :href="route('kendaraan')" :active="request()->routeIs('kendaraan','kendaraan.create','kendaraan.edit')"
                             class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
-                                <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                              </svg>
+                              
                             <span class="ml-4">{{ __('Kendaraan') }}</span>
                         </x-nav-link>
                     </li>
                     <li class="relative px-6 py-3">
-                        <x-nav-link :href="route('tamu')" :active="request()->routeIs('tamu')"
+                        <x-nav-link :href="route('tamu')" :active="request()->routeIs('tamu','tamu.create','tamu.edit')"
                             class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -114,14 +113,12 @@
                         </x-nav-link>
                     </li>
                     <li class="relative px-6 py-3">
-                        <x-nav-link :href="route('meninggal')" :active="request()->routeIs('meninggal')"
+                        <x-nav-link :href="route('meninggal')" :active="request()->routeIs('meninggal','meninggal.create','meninggal.edit')"
                             class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46" />
+                              </svg>
+                              
                             <span class="ml-4">{{ __('Meninggal') }}</span>
                         </x-nav-link>
                     </li>
