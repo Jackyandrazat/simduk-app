@@ -282,7 +282,7 @@
                         <select
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_kependudukan" id="status_kependudukan">
-                            <option value="Baru">Baru</option>
+                            <option value="Pindahan">Pindahan</option>
                             <option value="Lama">Lama</option>
                         </select>
                     </label>

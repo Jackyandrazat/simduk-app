@@ -7,8 +7,11 @@ use App\Http\Controllers\WargaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\LaporanConntroller;
 use App\Http\Controllers\MeninggalController;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\perangkatRTConntroller;
+use App\Http\Controllers\RTConntroller;
 use App\Http\Controllers\TamuController;
 
 /*
@@ -90,6 +93,26 @@ Route::prefix('meninggal')->middleware(['auth','admin'])->group(function (){
     Route::get('/{meninggal}/edit', [MeninggalController::class, 'edit'])->name('meninggal.edit');
     Route::put('/{meninggal}/edit', [MeninggalController::class, 'update']);
     Route::delete('/{meninggal}', [MeninggalController::class, 'destroy'])->name('meninggal.destroy');
+
+});
+
+Route::prefix('rt')->middleware(['auth','admin'])->group(function (){
+    Route::get('/',[perangkatRTConntroller::class, 'index'])->name('rt');
+    Route::get('/create',[perangkatRTConntroller::class, 'create'])->name('rt.create');
+    Route::post('/', [perangkatRTConntroller::class, 'store'])->name('rt.store');
+    Route::get('/{rt}/edit', [perangkatRTConntroller::class, 'edit'])->name('rt.edit');
+    Route::put('/{rt}/edit', [perangkatRTConntroller::class, 'update']);
+    Route::delete('/{rt}', [perangkatRTConntroller::class, 'destroy'])->name('rt.destroy');
+
+});
+
+Route::prefix('laporan')->middleware(['auth','admin'])->group(function (){
+    Route::get('/',[LaporanConntroller::class, 'index'])->name('laporan.index');
+    Route::get('/bulanan',[LaporanConntroller::class, 'laporanBulanan'])->name('laporan.bulanan');
+    Route::get('/tahunan',[LaporanConntroller::class, 'laporanTahunan'])->name('laporan.tahunan');
+    Route::get('/bulanan-pdf',[LaporanConntroller::class, 'generatePdf'])->name('laporan.bulananPDF');
+    Route::get('/tahunan-pdf',[LaporanConntroller::class, 'generatePdfTahunan'])->name('laporan.tahunanPDF');
+
 
 });
 

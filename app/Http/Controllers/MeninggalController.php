@@ -25,7 +25,7 @@ class MeninggalController extends Controller
          ]);
      }
     public function store(Request $request)
-     {
+    {
          $validatedData=$request->validate([
              'nik' => 'required',
              'date_meninggal' => 'required',
@@ -38,7 +38,7 @@ class MeninggalController extends Controller
          // dd($validatedData);
          Meninggal::create($validatedData);
          return redirect('/meninggal')->with('success', 'Data berhasil disimpan');
-     }
+    }
 
      public function edit(Meninggal $meninggal)
         {

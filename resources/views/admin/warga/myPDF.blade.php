@@ -8,7 +8,7 @@
     <h1>{{ $title }}</h1>
     <p>{{ $date }}</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.</p>
+    tempor incididunt ut labore et dolore ma gna aliqua.</p>
   
     <table class="table table-bordered">
         <tr>

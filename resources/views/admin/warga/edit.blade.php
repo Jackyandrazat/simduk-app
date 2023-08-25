@@ -239,8 +239,8 @@
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_kependudukan"
                         >
-                        <option value="Baru" {{ $warga->status_kependudukan === 'Baru' ? 'selected' : '' }}>Baru</option>
-                        <option value="Lama" {{ $warga->status_kependudukan === 'Lama' ? 'selected' : '' }}>Lama</option>
+                        <option value="Pindahan" {{ $warga->status_kependudukan === 'Pindahan' ? 'selected' : '' }}>Pindahan</option>
+                        <option value="Pindahan" {{ $warga->status_kependudukan === 'Lama' ? 'selected' : '' }}>Lama</option>
                         </select>
                     </label>
                     <label class="block mt-4 text-sm">
