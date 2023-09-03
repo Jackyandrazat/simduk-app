@@ -63,13 +63,14 @@ class LaporanConntroller extends Controller
             'jumlahLakiLakiBulanan' => Warga::where('jenis_kelamin', 'Laki Laki')->whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
             'jumlahPerempuanBulanan' => Warga::where('jenis_kelamin', 'Perempuan')->whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
             'jumlahStatusPendudukAktifBulanan' => Warga::where('status_kependudukan', 'Lama')->whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
-            'jumlahStatusPendudukPindahBulanan' => Warga::where('status_kependudukan', 'Baru')->whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
+            'jumlahStatusPendudukPindahBulanan' => Warga::where('status_kependudukan', 'Pindahan')->whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
             'tanggalBulanan' => $tanggalBulanan,
             'totalKendaraanBulanan' => Kendaraan::whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
             'totalTamuBulanan' => Tamu::whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
             'totalMeninggalBulanan' => Meninggal::whereBetween('date_meninggal', [$firstDayOfMonth, $lastDayOfMonth])->count(),
             'totalKeluargaBulanan' => Keluarga::whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->count(),
-
+            'pindahWarga' => Warga::where('status_kependudukan', 'Pindahan')->whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->get(),
+            'wargaMeninggal' => Meninggal::whereBetween('created_at', [$firstDayOfMonth, $lastDayOfMonth])->get()  
             // ... tambahkan data lainnya
         ];
 
@@ -96,10 +97,10 @@ class LaporanConntroller extends Controller
 
         $data = [
             'totalWargaTahunan' => Warga::whereYear('created_at', $tanggalTahunan )->count(),
-            'jumlahLakiLakiTahunan' => Warga::where('jenis_kelamin', 'Laki Laki')->whereYear('created_at', $tanggalTahunan )->count(),
+            'jumlahLakiLakiTahunan' => Warga::where('jenis_kelamin', 'Laki-Laki')->whereYear('created_at', $tanggalTahunan )->count(),
             'jumlahPerempuanTahunan' => Warga::where('jenis_kelamin', 'Perempuan')->whereYear('created_at',$tanggalTahunan )->count(),
             'jumlahStatusPendudukAktifTahunan' => Warga::where('status_kependudukan', 'Lama')->whereYear('created_at',$tanggalTahunan )->count(),
-            'jumlahStatusPendudukPindahTahunan' => Warga::where('status_kependudukan', 'Baru')->whereYear('created_at', $tanggalTahunan )->count(),
+            'jumlahStatusPendudukPindahTahunan' => Warga::where('status_kependudukan', 'Pindahan')->whereYear('created_at', $tanggalTahunan )->count(),
             'tanggalTahunan' => $tanggalTahunan,
             'totalKendaraanTahunan' => Kendaraan::whereYear('created_at', $tanggalTahunan )->count(),
             'totalTamuTahunan' => Tamu::whereYear('created_at', $tanggalTahunan )->count(),

@@ -18,4 +18,14 @@ class Warga extends Model
     {
     	return $this->belongsTo(Keluarga::class);
     }
+
+    public function kendaraans()
+    {
+        return $this->hasMany(Kendaraan::class, 'nik', 'id');
+    }
+
+    public function meninggals()
+    {
+        return $this->hasMany(Meninggal::class, 'nik', 'id');
+    }
 }

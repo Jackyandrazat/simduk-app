@@ -201,7 +201,17 @@ class WargaController extends Controller
 
     public function destroy(Warga $warga)
     {
+        if ($warga->kendaraans()->exists()) {
+            return redirect('/warga')->with('error', 'Tidak dapat menghapus warga yang memiliki kendaraan terkait.');
+        }
+        if ($warga->meninggals()->exists()) {
+            return redirect('/warga')->with('error', 'Tidak dapat menghapus warga yang memiliki data di tabel meninggal terkait.');
+        }
+
+
         Warga::destroy($warga->id);
         return redirect('/warga')->with('pesan', 'Data Berhasil Dihapus');
+
+        
     }
 }

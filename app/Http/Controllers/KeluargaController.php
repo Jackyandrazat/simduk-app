@@ -55,10 +55,25 @@ class KeluargaController extends Controller
             ->select('wargas.*')
             ->where('keluargas.id', $keluarga->id)
             ->get();
+
+            $suami = Warga::where('status_kk', 'suami')
+            ->where('keluarga_id', $keluarga->id)
+            ->first(); 
+
+            $istri = Warga::where('status_kk', 'istri')
+            ->where('keluarga_id', $keluarga->id)
+            ->first(); 
+
+            $anak = Warga::where('status_kk', 'anak')
+            ->where('keluarga_id', $keluarga->id)
+            ->first(); 
     
         return view('admin.keluarga.show', [
             'keluarga' => $keluarga,
             'wargas' => $wargas,
+            'suami' => $suami,
+            'anak' => $anak,
+            'istri' => $istri
         ]);
     }
 

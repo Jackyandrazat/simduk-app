@@ -168,9 +168,9 @@
                 datasets: [{
                     label: 'Usia',
                     data: ageData,
-                    backgroundColor: 'rgba(52, 144, 220, 0.8)', // Warna latar belakang batang
-                    borderColor: 'rgba(52, 144, 220, 1)', // Warna batang
-                    borderWidth: 1 // Lebar border batang
+                    backgroundColor: 'rgba(52, 144, 220, 0.8)',
+                    borderColor: 'rgba(52, 144, 220, 1)',
+                    borderWidth: 1
                 }]
             },
             options: {
@@ -188,7 +188,7 @@
                             text: 'Warga'
                         }
                     }
-                }
+                },
             }
         });
     </script>

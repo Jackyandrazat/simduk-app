@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tamu Page') }}
+            {{ __('Halaman Tamu') }}
         </h2>
         <nav aria-label="Breadcrumb" class="mt-2">
             <ol class="flex items-center gap-1 text-sm text-gray-600">
