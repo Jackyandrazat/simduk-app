@@ -44,6 +44,11 @@
             /* Ubah ukuran font menjadi 18pt */
         }
 
+        h3 {
+            font-size: 9pt;
+            /* Ubah ukuran font menjadi 18pt */
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -53,9 +58,20 @@
         th,
         td {
             border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
+            text-align: center;
         }
+
+        .td-header{
+            text-align: left;
+            border: 0px solid #1d1c1c;
+        }
+
+        .table-header{
+            width: 50%;
+            margin-left:50%; 
+            margin-right:auto;
+        }
+
 
         th {
             background-color: #f2f2f2;
@@ -71,86 +87,76 @@
         <div class="header">
             <img class="header-logo" src="" alt="Logo">
             <div class="header-title">Laporan Bulanan Kependudukan</div>
-            <div class="header-subtitle">{{ Carbon::parse($tanggalBulanan)->format('F Y') }}</div>
+            <div class="header-subtitle">Bulan {{ Carbon::parse($tanggalBulanan)->format('F Y') }}</div>
         </div>
 
         <div class="mb-4">
-            <h2>Data Jumlah Penduduk</h2>
-            <table class="table">
+            <table class="table-header">
+                <tr>
+                    <td class="td-header" style="background-color: #ffffff;">RT</td>
+                    <td class="td-header" style="background-color: #ffffff;">2</td>
+                </tr>
+                <tr>
+                    <td class="td-header">RW</td>
+                    <td class="td-header">5</td>
+                </tr>
+            </table>
+            <br/>
+            <table class="table table-sm">
                 <thead>
                     <tr>
-                        <th>Jenis Kelamin</th>
-                        <th>Jumlah Penduduk</th>
+                        <th class="text-center" rowspan="2" style="width: 10%; vertical-align: middle;">No</th>
+                        <th class="text-center" rowspan="2" style="width: 40%; vertical-align: middle;">Perincian</th>
+                        <th class="text-center" colspan="3" >Jumlah</th>
                     </tr>
+                    <tr>
+                        <th class=""style="width: 20%;">Laki Laki</th>
+                        <th class=""style="width: 20%;">Perempuan</th>
+                        <th class=""style="width: 20%;"  >L + P</th>
+
+                    </tr>
+
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Laki-Laki</td>
+                        <th>1</th>
+                        <td>Penduduk Awal Bulan Ini</td>
+                        <td>{{ $jumlahLakiLakiBulanSebelumnya }}</td>
+                        <td>{{ $jumlahPerempuanBulanSebelumnya }}</td>
+                        <td>{{ $totalWargaBulanSebelumnya }}</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Penambahan Penduduk Bulan Ini</td>
                         <td>{{ $jumlahLakiLakiBulanan }}</td>
-                    </tr>
-                    <tr>
-                        <td>Perempuan</td>
                         <td>{{ $jumlahPerempuanBulanan }}</td>
-                    </tr>
-                    <tr>
-                        <td>Total Warga Terdaftar</td>
                         <td>{{ $totalWargaBulanan }}</td>
                     </tr>
-                </tbody>
+                    <tr>
+                        <th>3</th>
+                        <td>Kematian Penduduk Bulan Ini</td>
+                        <td>{{ $jumlahLakiLakiMeninggalBulan }}</td>
+                        <td>{{ $jumlahPerempuanMeninggalBulan }}</td>
+                        <td>{{ $totalMeninggalBulanIni }}</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>Penduduk Akhir Bulan Ini</td>
+                        <td>{{ $jumlahLakiLakiAkhirBulan }}</td>
+                        <td>{{ $jumlahPerempuanAkhirBulanan }}</td>
+                        <td>{{ $totalWargaAkhirBulan }}</td>
+                    </tr>
 
-            </table>
-        </div>
-        <div class="mb-4">
-            <h2>Jumlah Kartu Keluarga tercatat : {{ $totalKeluargaBulanan }}</h2>
-        </div>
-        <div class="mb-4">
-            <h2>Status Kependudukan</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Jumlah Penduduk</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Aktif</td>
-                        <td>{{ $jumlahStatusPendudukAktifBulanan }}</td>
-                    </tr>
-                    <tr>
-                        <td>Pindah</td>
-                        <td>{{ $jumlahStatusPendudukPindahBulanan }}</td>
-                    </tr>
-                    <tr>
-                        <td>Meninggal</td>
-                        <td>{{ $totalMeninggalBulanan }}</td>
-                    </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th class="text-left" colspan="2"></th>
+                        <th class="text-center" colspan="3">Jumlah : {{ $totalBulanIni }}</th>
+                    </tr>
+                </tfoot>
             </table>
         </div>
-        <h2 class="fw-bold">Daftar Warga Pindah</h2>
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th class="col-1" style="width: 10%;">#</th>
-                    <th class="col-2">Nama</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if ($pindahWarga->isEmpty())
-                    <tr>
-                        <td colspan="2">Tidak ada data warga yang pindah.</td>
-                    </tr>
-                @else
-                @foreach ($pindahWarga as $warga)
-                    <tr>
-                        <th>{{ $loop->iteration }}</th>
-                        <td>{{ $warga->nama }}</td>
-                    </tr>
-                @endforeach
-                @endif
-            </tbody>
-        </table>
+        <h2>Deksripsi Rincian:</h2>
         <h2 class="fw-bold">Daftar Warga Meninggal</h2>
         <table class="table table-sm">
             <thead>
@@ -174,10 +180,70 @@
                 @endif
             </tbody>
         </table>
-
+        <hr class="border border-dark">
         <div class="mb-4">
-            <h2>Kendaraan Warga Tercatat : {{ $totalKendaraanBulanan }}</h2>
-            <h2>Tamu Bulan ini : {{ $totalTamuBulanan }}</h2>
+            <h2>Data Keluarga Bulan ini</h2>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 10%; ">No</th>
+                        <th class="text-center" style="">Rincian</th>
+                        <th class="text-center" style="">Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Kartu Keluarga Terdaftar Bulan Ini</td>
+                        <td>{{ $totalKeluargaBulanan }}</td>
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="border border-dark">
+        <div class="mb-4">
+            <h2>Data Kendaraan Bulan ini</h2>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 10%; ">No</th>
+                        <th class="text-center" style="">Rincian</th>
+                        <th class="text-center" style="">Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Kendaraan Terdaftar Bulan Ini</td>
+                        <td>{{ $totalKendaraanBulanan }}</td>
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="border border-dark">
+        <div class="mb-4">
+            <h2>Data Tamu Bulan ini</h2>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 10%; ">No</th>
+                        <th class="text-center" style="">Rincian</th>
+                        <th class="text-center" style="">Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Tamu Terdaftar Bulan Ini</td>
+                        <td>{{ $totalTamuBulanan }}</td>
+    
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Tambahkan informasi lainnya sesuai kebutuhan -->

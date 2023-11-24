@@ -282,8 +282,10 @@
                         <select
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_kependudukan" id="status_kependudukan">
-                            <option value="Pindahan">Pindahan</option>
-                            <option value="Lama">Lama</option>
+                            <option value="">Pilih Opsi</option>
+                            {{-- <option value="Pindah">Pindahan</option> --}}
+                            <option value="Aktif">Aktif</option>
+                            <option value="Meniggal">Meninggal</option>
                         </select>
                     </label>
                     @error('status_kependudukan')
@@ -293,7 +295,10 @@
                         <span class="text-gray-700 dark:text-gray-400">
                             RW
                         </span>
-                        <select
+                        <input
+                            class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('RT') border-red-500 @enderror"
+                            value="5" name="RW" id="RW" readonly />
+                        {{-- <select
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="RW" id="RW">
                             <option value="1">1</option>
@@ -302,7 +307,7 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
-                        </select>
+                        </select> --}}
                     </label>
                     @error('RW')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
@@ -311,7 +316,7 @@
                         <span class="text-gray-700 dark:text-gray-400">RT</span>
                         <input
                             class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input @error('RT') border-red-500 @enderror"
-                            value="{{ old('RT') }}" name="RT" value="" id="RT" />
+                            value="2" name="RT" id="RT" readonly>
                     </label>
                     @error('RT')
                         <p class="mt-2 text-sm text-red-600">{{ $message }}</p>

@@ -26,7 +26,7 @@ class HomeController extends Controller
                 return view('user.dashboard');
             } else if ($usertype == 'admin') {
                 $totalWarga = Warga::count();
-                $jumlahLakiLaki = Warga::where('jenis_kelamin', 'Laki Laki')->count();
+                $jumlahLakiLaki = Warga::where('jenis_kelamin', 'Laki-laki')->count();
                 $jumlahPerempuan = Warga::where('jenis_kelamin', 'Perempuan')->count();
                 $totalKeluarga = Keluarga::count();
                 $totalKendaraan = Kendaraan::count();

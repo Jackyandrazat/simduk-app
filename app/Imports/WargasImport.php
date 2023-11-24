@@ -7,6 +7,7 @@ use App\Models\Warga;
 use App\Models\Keluarga;
 use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Illuminate\Support\Carbon as Carboon;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class WargasImport implements ToModel, WithHeadingRow
@@ -21,7 +22,7 @@ class WargasImport implements ToModel, WithHeadingRow
                 'nik' => $row['nik'],
                 'nama' => $row['nama_warga'],
                 'tempat_lahir' => $row['tempat_lahir'],
-                'tanggal_lahir' => Carbon::createFromFormat('m/d/Y', $row['tanggal_lahir']),
+                'tanggal_lahir' => Carboon::createFromFormat("m/d/Y", $row['tanggal_lahir']),
                 'jenis_kelamin' => $row['jenis_kelamin'],
                 'pendidikan' => $row['pendidikan'],
                 'agama' => $row['agama'],

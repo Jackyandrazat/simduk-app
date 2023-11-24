@@ -63,7 +63,8 @@
                                 class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                             >
                                 <th class="px-4 py-3">NIK</th>
-                                <th class="px-4 py-3">Nama Kendaraan</th>
+                                <th class="px-4 py-3">Nama Pemilik Kendaraan</th>
+                                <th class="px-4 py-3">Merk Kendaraan</th>
                                 <th class="px-4 py-3">No Plat</th>
                                 <th class="px-4 py-3">Actions</th>
                             </tr>
@@ -78,6 +79,13 @@
                                     <div class="flex items-center text-sm">
                                         <div>
                                           <p class="font-semibold">{{ $kendaraan->kendaraanRelation->nik }}</p>
+                                        </div>
+                                      </div>
+                                </td>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center text-sm">
+                                        <div>
+                                          <p class="font-semibold">{{ $kendaraan->kendaraanRelation->nama }}</p>
                                         </div>
                                       </div>
                                 </td>

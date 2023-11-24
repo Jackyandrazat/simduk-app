@@ -239,15 +239,20 @@
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="status_kependudukan"
                         >
-                        <option value="Pindahan" {{ $warga->status_kependudukan === 'Pindahan' ? 'selected' : '' }}>Pindahan</option>
-                        <option value="Pindahan" {{ $warga->status_kependudukan === 'Lama' ? 'selected' : '' }}>Lama</option>
+                        {{-- <option value="Pindah" {{ $warga->status_kependudukan === 'Pindah' ? 'selected' : '' }}>Pindah</option> --}}
+                        <option value="Aktif" {{ $warga->status_kependudukan === 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                        <option value="Meninggal" {{ $warga->status_kependudukan === 'Meninggal' ? 'selected' : '' }}>Meninggal</option>
                         </select>
                     </label>
                     <label class="block mt-4 text-sm">
                         <span class="text-gray-700 dark:text-gray-400">
                         RW
                         </span>
-                        <select
+                        <input
+                        class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        name="RW" value="{{ $warga->RW }}" required readonly 
+                        />
+                        {{-- <select
                         class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:focus:shadow-outline-gray"
                             name="RW"
                         >
@@ -257,13 +262,13 @@
                         <option value="4" {{ $warga->RW === '4' ? 'selected' : '' }}>4</option>
                         <option value="5" {{ $warga->RW === '5' ? 'selected' : '' }}>5</option>
                         <option value="6" {{ $warga->RW === '6' ? 'selected' : '' }}>6</option>
-                        </select>
+                        </select> --}}
                     </label>
                     <label class="block text-sm mt-3">
                         <span class="text-gray-700 dark:text-gray-400">RT</span>
                         <input
                         class="block w-full mt-1 text-sm rounded-lg dark:border-gray-600 dark:bg-gray-700 focus:border-green-400 focus:outline-none focus:shadow-outline-green dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        name="RT" value="{{ $warga->RT }}" required 
+                        name="RT" value="{{ $warga->RT }}" required readonly
                         />
                     </label>
                     <div class="py-5">

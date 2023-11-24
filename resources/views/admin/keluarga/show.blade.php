@@ -95,15 +95,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if (isset($suami))
+                            @if (isset($kepala_keluarga))
                                 <tr>
-                                    <td class="p-2 font-semibold">{{ $suami->nama }}</td>
-                                    <td class="p-2 text-gray-600">{{ $suami->nik }}</td>
-                                    <td class="p-2 text-gray-600">{{ $suami->jenis_kelamin }}</td>
-                                    <td class="p-2 text-gray-600">{{ $suami->tanggal_lahir }}</td>
-                                    <td class="p-2 text-gray-600">{{ $suami->status }}</td>
-                                    <td class="p-2 text-gray-600">{{ $suami->status_kk }}</td>
-                                    <td class="p-2 text-gray-600">{{ $suami->pekerjaan }}</td>
+                                    <td class="p-2 font-semibold">{{ $kepala_keluarga->nama }}</td>
+                                    <td class="p-2 text-gray-600">{{ $kepala_keluarga->nik }}</td>
+                                    <td class="p-2 text-gray-600">{{ $kepala_keluarga->jenis_kelamin }}</td>
+                                    <td class="p-2 text-gray-600">{{ $kepala_keluarga->tanggal_lahir }}</td>
+                                    <td class="p-2 text-gray-600">{{ $kepala_keluarga->status }}</td>
+                                    <td class="p-2 text-gray-600">{{ $kepala_keluarga->status_kk }}</td>
+                                    <td class="p-2 text-gray-600">{{ $kepala_keluarga->pekerjaan }}</td>
                                 </tr>
                             @endif
                             @if (isset($istri))
@@ -118,6 +118,7 @@
                                 </tr>
                             @endif
                             @if (isset($anak))
+                                @foreach ($anak as $anak)
                                 <tr>
                                     <td class="p-2 font-semibold">{{ $anak->nama }}</td>
                                     <td class="p-2 text-gray-600">{{ $anak->nik }}</td>
@@ -127,12 +128,13 @@
                                     <td class="p-2 text-gray-600">{{ $anak->status_kk }}</td>
                                     <td class="p-2 text-gray-600">{{ $anak->pekerjaan }}</td>
                                 </tr>
+                                @endforeach
                             @endif
                         </tbody>
                     </table>
                 </div>
                 <div class="text-right mt-4 mr-4">
-                    <p class="font-semibold mt-2">NAMA KELUARGA</p>
+                    <p class="font-semibold mt-2">KEPALA KELUARGA</p>
                     <p class="font-semibold mt-2">{{ $keluarga->nama_keluarga }}</p>
                     {{-- <p class="text-gray-600">{{ $keluarga->warga->nama }}</p> --}}
                 </div>

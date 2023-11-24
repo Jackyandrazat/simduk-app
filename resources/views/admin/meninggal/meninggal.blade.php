@@ -45,6 +45,27 @@
               <span>Tambah Data</span>
             </a> 
         </div>
+        @if (session()->has('success'))
+            <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-2 py-3 max-w-5xl mb-5 ml-5"
+                role="alert">
+                <p class="font-bold">Success message</p>
+                <p class="text-sm">{{ session('success') }}</p>
+            </div>
+        @endif
+        @if (session()->has('pesan'))
+            <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-2 py-3 max-w-5xl mb-5 ml-5"
+                role="alert">
+                <p class="font-bold">Informational message</p>
+                <p class="text-sm">{{ session('pesan') }}</p>
+            </div>
+        @endif
+        @if (session()->has('error'))
+            <div class="bg-blue-100 border-t border-b border-red-600 text-red-600 px-2 py-3 max-w-5xl mb-5 ml-5"
+                role="alert">
+                <p class="font-bold">Error Message</p>
+                <p class="text-sm">{{ session('error') }}</p>
+            </div>
+        @endif
         </div>
         <div class="max-w-5xl sm:px-6 lg:px-2">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
